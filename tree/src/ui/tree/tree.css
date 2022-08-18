@@ -1,10 +1,10 @@
-.MuiTreeItem-label{
-    overflow-x:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+.MuiTreeItem-label {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .MuiTreeItem-label:hover {
-    overflow:visible;
-    white-space:break-spaces;
+  overflow: visible;
+  white-space: break-spaces;
 }
