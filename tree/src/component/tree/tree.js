@@ -43,10 +43,25 @@ class Tree extends React.Component {
       <TreeView
         defaultCollapseIcon={<ExpandMoreIcon />}
         defaultExpandIcon={<ChevronRightIcon />}
-        sx={{ height: 110, flexGrow: 1, maxWidth: 400 }}
+        sx={{ height: 110, flexGrow: 1, maxWidth: 300 }}
       >
         {this.getTreeItemsFromData(treeItems)}
       </TreeView>
+    );
+  };
+
+  getHighlightText = (text, keyword) => {
+    const startIndex = text.toLowerCase().indexOf(keyword);
+    return startIndex !== -1 ? (
+      <span>
+        {text.substring(0, startIndex)}
+        <span className="highlight-label">
+          {text.substring(startIndex, startIndex + keyword.length)}
+        </span>
+        {text.substring(startIndex + keyword.length)}
+      </span>
+    ) : (
+      <span>{text}</span>
     );
   };
 
@@ -65,10 +80,12 @@ class Tree extends React.Component {
           nextNodes.length > 0 ||
           n.name.toLowerCase().includes(keyword.toLowerCase())
         ) {
+          n.name = this.getHighlightText(n.name, keyword);
           newNodes.push(n);
         }
       } else {
         if (n.name.toLowerCase().includes(keyword.toLowerCase())) {
+          n.name = this.getHighlightText(n.name, keyword);
           newNodes.push(n);
         }
       }
@@ -88,11 +105,12 @@ class Tree extends React.Component {
     let searchedNodes = this.state.keyword.trim()
       ? this.keywordFilter(_.cloneDeep(nodesData), this.state.keyword)
       : nodesData;
+
     return (
       <div className="content">
         <TextField
           id="standard-basic"
-          label="Filter ..."
+          label="Filter"
           InputProps={{
             endAdornment: (
               <InputAdornment position="start">

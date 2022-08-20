@@ -8,3 +8,7 @@
   overflow: visible;
   white-space: break-spaces;
 }
+
+.highlight-label {
+  background-color: yellow;
+}

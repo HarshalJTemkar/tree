@@ -1,67 +1,57 @@
 export const nodesData = [
   {
     id: "1",
-    name: "Parent",
+    name: "Platform Product Management",
     children: [
       {
         id: "10",
-        name: "Child - 1 There is a long text which has to be diaplayed",
+        name: "Platform Leadership Meeting Notes",
         children: [
           {
             id: "100",
-            name: "Child - 2 Hello we are back on the long text of data",
+            name: "PI01 -6.3 Retrospective - 6/11/2021",
           },
           {
-            id: "10022",
-            name: "child harshal dfsdfs sdf ssdf s f",
+            id: "101",
+            name: "Solera Pivot 2021-06-25",
           },
         ],
       },
       {
         id: "20",
-        name: "Child - 3",
-        children: [
-          {
-            id: "200",
-            name: "Child - 4",
-            children: [
-              {
-                id: "300",
-                name: "Child - 5",
-              },
-            ],
-          },
-        ],
+        name: "Dependencies",
+      },
+      {
+        id: "30",
+        name: "Risk & Blockers",
       },
     ],
   },
   {
     id: "2",
-    name: "Parent1",
+    name: "Platform Projects",
     children: [
       {
         id: "110",
-        name: "Child - 1 There is a long text which has to be diaplayed",
+        name: "Device Manager -Platform",
         children: [
           {
             id: "1100",
-            name: "Child - 2 Hello we are back on the long text of data",
+            name: "Device Manager 6.3 Pre PI Planning",
           },
         ],
       },
       {
         id: "120",
-        name: "Child - 3",
+        name: "Entities",
         children: [
           {
             id: "1200",
-            name: "Child - 4",
-            children: [
-              {
-                id: "1300",
-                name: "Child - 5",
-              },
-            ],
+            name: "Global Drive Page",
+          },
+          {
+            id: "1300",
+            name: "Omnitracs One Label Management",
           },
         ],
       },
