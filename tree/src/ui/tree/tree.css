@@ -12,3 +12,7 @@
 .highlight-label {
   background-color: yellow;
 }
+
+.MuiTreeItem-iconContainer {
+  width: 40px !important;
+}
