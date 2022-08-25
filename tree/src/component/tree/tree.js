@@ -2,8 +2,8 @@ import * as React from "react";
 import TreeView from "@mui/lab/TreeView";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import FolderOpenIcon from '@mui/icons-material/FolderOpen';
-import FolderIcon from '@mui/icons-material/Folder';
+import FolderOpenIcon from "@mui/icons-material/FolderOpen";
+import FolderIcon from "@mui/icons-material/Folder";
 import TreeItem from "@mui/lab/TreeItem";
 import "../../ui/tree/tree.css";
 
@@ -31,10 +31,9 @@ class Tree extends React.Component {
       }
       return (
         <TreeItem
-          
           key={treeItemData.id}
           nodeId={treeItemData.id}
-          label={treeItemData.name}
+          label={<span>{treeItemData.name}</span>}
           children={children}
         />
       );
@@ -44,9 +43,19 @@ class Tree extends React.Component {
   DataTreeView = (treeItems) => {
     return (
       <TreeView
-        defaultCollapseIcon={<div>{<ExpandMoreIcon/>}{<FolderIcon/>}</div>}
-        defaultExpandIcon={<div><ChevronRightIcon/><FolderOpenIcon/></div>}
-        defaultEndIcon = {<FolderIcon/>}
+        defaultCollapseIcon={
+          <div>
+            {<ExpandMoreIcon />}
+            {<FolderIcon />}
+          </div>
+        }
+        defaultExpandIcon={
+          <div>
+            <ChevronRightIcon />
+            <FolderOpenIcon />
+          </div>
+        }
+        defaultEndIcon={<FolderIcon />}
         sx={{ height: 110, flexGrow: 1, maxWidth: 300 }}
       >
         {this.getTreeItemsFromData(treeItems)}
